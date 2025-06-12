@@ -1,0 +1,3 @@
+# Hayase Website
+
+yes.
