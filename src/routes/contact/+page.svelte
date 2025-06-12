@@ -1,4 +1,4 @@
-<div class='w-full max-w-screen-xl mx-auto text-base pb-5 text-muted-foreground leading-normal'>
+<div class='w-full max-w-screen-xl mx-auto text-base pb-5 text-muted-foreground leading-normal px-12'>
   <div class='pt-20'>
     <h1 class='text-white font-bold text-4xl my-3'>Contact</h1>
     <p class='my-2'>If you're running into any issues with Hayase, or have an idea for an enhancement, please file an <a class='text-blue-600 dark:text-blue-500 hover:underline' href='https://github.com/ThaUnknown/miru/issues' target='_blank'>issue on github</a>.</p>

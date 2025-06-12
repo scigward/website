@@ -1,4 +1,4 @@
-<div class='w-full max-w-screen-xl mx-auto text-sm pb-5 text-muted-foreground leading-normal'>
+<div class='w-full max-w-screen-xl mx-auto text-sm pb-5 text-muted-foreground leading-normal px-12'>
   <div class='pt-20'>
     <div class='h-[40vh] px-5 sm:px-0 flex content-center justify-center flex-col'>
       <h1 class='text-white font-bold text-5xl my-3'>Frequently Asked Questions</h1>

@@ -4,7 +4,7 @@
   import Logo from '../icons/Logo.svelte'
 </script>
 
-<div class='pb-4 font-weight-light text-xs text-muted-foreground sticky top-full w-full flex flex-col items-center border-t border-gradient'>
+<div class='pb-4 px-2 sm:px-12 font-weight-light text-xs text-muted-foreground sticky top-full w-full flex flex-col items-center border-t border-gradient'>
   <div class='grid grid-cols-12 px-4 sm:px-0 my-4 w-full max-w-screen-xl'>
     <div class='col-span-12 md:col-span-4 pt-4 mb-4 md:text-left'>
       <a href='/'>
@@ -37,7 +37,7 @@
       <div>
         <div class='font-semibold mb-3 text-white'>Social</div>
         <a href={atob('aHR0cHM6Ly9kaXNjb3JkLmdnL1o4N05oN2M0QWM=')} target='_blank'><Discord class='size-4 inline mr-2 hover:text-foreground transition-colors' /></a>
-        <a href='https://github.com/ThaUnknown/miru' target='_blank'><Github class='size-4 inline hover:text-foreground transition-colors' /></a>
+        <a href='https://github.com/hayase-app/ui' target='_blank'><Github class='size-4 inline hover:text-foreground transition-colors' /></a>
       </div>
     </div>
     <div class='italic col-span-12 pt-5'>

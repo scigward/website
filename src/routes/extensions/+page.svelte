@@ -1,4 +1,4 @@
-<div class='w-full max-w-screen-xl mx-auto text-sm pb-5 text-muted-foreground leading-normal'>
+<div class='w-full max-w-screen-xl mx-auto text-sm pb-5 text-muted-foreground leading-normal px-12'>
   <div class='pt-20'>
     <div class='h-[40vh] px-5 sm:px-0 flex content-center justify-center flex-col'>
       <h1 class='text-white font-bold text-5xl my-3'>About Extension</h1>
@@ -18,7 +18,7 @@
     <p>You can disable sources in the sources list by clicking on it's toggle.</p>
     <div class='border-b border-gradient my-8 w-full' />
     <h3 class='text-white font-bold text-2xl my-3'>How to develop new extensions?</h3>
-    <p>Extensions for Hayase need to be written in JavaScript which are run in an isolated <a class='text-blue-600 dark:text-blue-500 hover:underline' href='https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API' target='_blank'>Web Worker</a>. Make sure the data you're fetching is CORS enabled. Extension type definitions and example structures are available on <a href='https://github.com/ThaUnknown/miru/tree/master/extensions' target='_blank'>GitHub</a>.</p>
+    <p>Extensions for Hayase need to be written in JavaScript which are run in an isolated <a class='text-blue-600 dark:text-blue-500 hover:underline' href='https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API' target='_blank'>Web Worker</a>. Make sure the data you're fetching is CORS enabled. Extension type definitions and example structures are available on <a href='https://github.com/hayase-app/extensions' target='_blank'>GitHub</a>.</p>
     <p>Options object, which is passed to the class's single, batch and movie functions as the first parameters has the following fields:</p>
     <ul class='text-wrap list-disc list-inside space-y-1'>
       <li>anilistId: number - Anilist anime id, can be used to query data from Anilist, such as MalID, episode metadata etc</li>

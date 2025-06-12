@@ -1,4 +1,4 @@
-<div class='w-full max-w-screen-xl mx-auto text-sm pb-5 text-muted-foreground leading-normal'>
+<div class='w-full max-w-screen-xl mx-auto text-sm pb-5 text-muted-foreground leading-normal px-12'>
   <div class='pt-20'>
     <h1 class='text-white font-bold text-4xl my-3'>Terms of Use</h1>
     <br />Last updated: November 27th, 2023.

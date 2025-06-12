@@ -4,7 +4,7 @@
   import Logo from '../icons/Logo.svelte'
 </script>
 
-<header class='sticky top-0 flex h-16 items-center justify-center px-12 backdrop-blur border-b border-gradient z-30'>
+<header class='sticky top-0 flex h-16 items-center justify-center px-5 sm:px-12 backdrop-blur border-b border-gradient z-30'>
   <nav class='flex-row gap-8 text-xs font-medium flex items-center w-full max-w-screen-xl'>
     <a href='/' class='flex items-center gap-2 text-lg font-semibold md:text-base'>
       <Logo class='h-10 object-contain p-1 text-white' />
