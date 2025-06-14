@@ -3,8 +3,10 @@
   import Link from 'lucide-svelte/icons/link'
   import Rocket from 'lucide-svelte/icons/rocket'
 
+  import { Button } from '$lib/components/ui/button'
+  import { ShowcaseCard } from '$lib/components/ui/cards'
+  import { EpisodeList } from '$lib/components/ui/episodelist'
   import { Hero } from '$lib/components/ui/hero'
-  // import { violetEpisodes } from '$lib/dummyData.js'
   import AndroidSvg from '$lib/components/ui/icons/AndroidSVG.svelte'
   import AndroidTvsvg from '$lib/components/ui/icons/AndroidTVSVG.svelte'
   import LinuxSvg from '$lib/components/ui/icons/LinuxSVG.svelte'
@@ -79,8 +81,8 @@
           <p class='text-muted-foreground text-sm'>Find and download torrents, watch trailers, manage your list, search, browse and discover anime, watch together with friends and more, all in the same interface. No need to open multiple apps, tabs, everything shipped in one package.</p>
         </div>
       </div>
-      <div class='md:col-span-5 col-span-12 overflow-clip md:overflow-[unset] h-600 relative justify-center md:justify-end flex'>
-        <!-- <ShowcaseCards /> -->
+      <div class='md:col-span-5 col-span-12 overflow-clip md:[overflow:unset] h-600 relative justify-center md:justify-end flex'>
+        <ShowcaseCard />
         <div class='overlay-gradient-top-bottom absolute top-0 left-0 w-full h-full z-[50] md:hidden pointer-events-none' />
       </div>
     </div>
@@ -89,14 +91,14 @@
 </div>
 
 <div class='w-full max-w-screen-xl mx-auto border-t border-gradient'>
-  <div class='my-5 py-5'>
+  <div class='my-5 py-20'>
     <div class='lg:grid grid-cols-12 flex flex-col-reverse'>
       <div class='md:col-span-6 col-span-12'>
         <div class='m-6'>
-          <!-- <EpisodeList episodeList={violetEpisodes} userProgress={1} /> -->
+          <EpisodeList />
         </div>
       </div>
-      <div class='md:col-span-6 col-span-12 align-items-center d-flex'>
+      <div class='md:col-span-6 col-span-12 items-center flex'>
         <div class='m-6'>
           <h1 class='w-full font-bold text-white mb-4 mt-2 text-5xl leading-snug'>
             It already does that.
@@ -108,7 +110,7 @@
   </div>
 
   <div class='border-y border-gradient'>
-    <div class='my-5 py-5'>
+    <div class='my-5 py-20'>
       <div class='m-6'>
         <h1 class='w-full font-bold text-white mb-4 mt-2 text-5xl leading-snug text-center'>
           Available everywhere.
@@ -126,8 +128,8 @@
     </div>
   </div>
 
-  <div class='mt-5 pt-5'>
-    <h1 class='w-full font-bold text-white mb-4 mt-2 text-5xl leading-snug text-center m-6'>
+  <div class='mt-16 py-5'>
+    <h1 class='w-full font-bold text-white mb-4 mt-2 text-5xl leading-snug m-6'>
       Loved by thousands.
     </h1>
   </div>
@@ -136,7 +138,7 @@
 <Stargazers stargazers={data.stargazers} />
 <div class='w-full max-w-screen-xl mx-auto border-t border-gradient'>
 
-  <div class='my-5 py-5'>
+  <div class='my-5 py-16'>
     <div class='m-6'>
       <h1 class='text-center font-bold text-white text-5xl py-3'>
         What they say...
@@ -153,11 +155,8 @@
         <h1 class='w-full font-bold text-white mb-4 mt-2 text-5xl leading-snug text-center'>
           HAYASE
         </h1>
-        <p class='text-muted-foreground text-sm text-center'>Start your journey right here. Right now. Get started by<br />clicking download button below.</p>
-        <a href='/download' class='btn btn-danger btn-lg'>
-          Download
-        </a>
-
+        <p class='text-muted-foreground text-sm text-center mb-5'>Start your journey right here. Right now. Get started by<br />clicking download button below.</p>
+        <Button href='/download' class='font-bold text-lg' size='lg'>Download</Button>
         <div class='h-[180px] w-full overflow-clip mt-5 pt-5'>
           <img src='app.webp' alt='app' class='max-w-full object-contain aspect-[2/1] px-5 w-full' />
         </div>

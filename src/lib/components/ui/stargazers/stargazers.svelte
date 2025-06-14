@@ -12,7 +12,7 @@
   }
 </script>
 
-<div class='flex flex-col w-full items-center pb-5'>
+<div class='flex flex-col w-full items-center pb-20'>
   <div class='max-w-[1600px] overflow-clip relative w-full'>
     <div class='overlay-gradient absolute top-0 left-0 w-full h-full z-10' />
     {#await stargazers}
