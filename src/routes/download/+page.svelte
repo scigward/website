@@ -32,7 +32,7 @@
     Debian: ''
   }
 
-  const releases = 'https://github.com/hayase-app/electron/releases'
+  const releases = 'https://github.com/hayase-app/ui/releases'
 
   async function downloadForOS () {
     const releases = await data.releases

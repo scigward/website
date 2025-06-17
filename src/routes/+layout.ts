@@ -18,7 +18,7 @@ export const load: LayoutLoad = ({ fetch }) => {
     })(),
     releases: (async () => {
       try {
-        const res = await fetch('https://api.github.com/repos/hayase-app/electron/releases')
+        const res = await fetch('https://api.github.com/repos/hayase-app/ui/releases')
         const json: Array<{ body: string, tag_name: string, published_at: string, assets: Array<{name: string, browser_download_url: string}> }> = await res.json()
         return json.map(({ body, tag_name: version, published_at: date, assets }) => ({ body, version, date, assets }))
       } catch (e) {
