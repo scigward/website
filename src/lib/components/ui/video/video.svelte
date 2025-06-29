@@ -28,8 +28,8 @@
       <div class='overlay-gradient absolute px-4 top-0 left-0 w-full h-full pointer-events-none' />
     </div>
   </Dialog.Trigger>
-  <Dialog.Content class='p-0'>
-    <video src='https://raw.githubusercontent.com/hayase-app/website/main/docs/showcase.mp4' controls class='w-full' />
+  <Dialog.Content class='p-0 max-w-[unset] !w-auto'>
+    <video src='https://raw.githubusercontent.com/hayase-app/website/main/docs/showcase.mp4' controls class='w-[1000px]' />
   </Dialog.Content>
 </Dialog.Root>
 
