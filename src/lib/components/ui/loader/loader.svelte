@@ -1,14 +1,4 @@
-<script lang='ts'>
-  import { onMount } from 'svelte'
-
-  let animate = false
-
-  onMount(() => {
-    animate = true
-  })
-</script>
-
-<div class='h-full con w-screen z-[90] font-bold overflow-hidden fixed' class:animate>
+<div class='h-full con w-screen z-[90] font-bold overflow-hidden fixed animate'>
   <div class='h-full text flex items-center justify-center text-nowrap text-transparent capitalize w-screen' data-nosnippet>
     Loading...
   </div>

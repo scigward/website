@@ -11,7 +11,7 @@ const config = {
   },
   preprocess: vitePreprocess({}),
   kit: {
-    adapter: adapter({ fallback: 'index.html' }),
+    adapter: adapter({ fallback: '404.html' }),
     prerender: {
       concurrency: 1,
       crawl: true,

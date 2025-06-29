@@ -12,16 +12,8 @@
 
   export let color: string | null | undefined = 'transparent'
 
-  let loaded = false
-
-  async function test (e: Event & { currentTarget: EventTarget & Element }) {
-    const target = e.currentTarget as HTMLImageElement
-    await target.decode()
-    loaded = true
-  }
-
 </script>
 
 <div class={className}>
-  <img {src} {alt} on:load on:load={test} class={cn(className, 'transition-opacity opacity-0 duration-300 ease-out')} class:!opacity-100={loaded} decoding='async' loading='lazy' />
+  <img {src} {alt} on:load class={cn(className)} decoding='async' loading='lazy' />
 </div>
