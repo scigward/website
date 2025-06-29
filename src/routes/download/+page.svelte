@@ -1,4 +1,6 @@
 <script lang='ts'>
+  import { onMount } from 'svelte'
+
   import AndroidSVG from '$lib/components/ui/icons/AndroidSVG.svelte'
   import AndroidTVSVG from '$lib/components/ui/icons/AndroidTVSVG.svelte'
   import LinuxSVG from '$lib/components/ui/icons/LinuxSVG.svelte'
@@ -6,7 +8,21 @@
   import SteamOSSVG from '$lib/components/ui/icons/SteamOSSVG.svelte'
   import WindowsSVG from '$lib/components/ui/icons/WindowsSVG.svelte'
 
-  export let data
+  const data = {
+    releases: new Promise(() => {})
+  }
+
+  onMount(() => {
+    data.releases = (async () => {
+      try {
+        const res = await fetch('https://api.github.com/repos/hayase-app/ui/releases')
+        const json: Array<{ body: string, tag_name: string, published_at: string, assets: Array<{name: string, browser_download_url: string}> }> = await res.json()
+        return json.map(({ body, tag_name: version, published_at: date, assets }) => ({ body, version, date, assets }))
+      } catch (e) {
+        return []
+      }
+    })()
+  })
 
   function getOS () {
     // @ts-expect-error bad typedef

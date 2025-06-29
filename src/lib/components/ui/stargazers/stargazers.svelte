@@ -1,9 +1,23 @@
 <script lang='ts'>
-  export let stargazers: Promise<Array<{
+  import { onMount } from 'svelte'
+
+  let stargazers = new Promise<Array<{
     htmlUrl: string
     avatarUrl: string
     login: string
-  }>>
+  }>>(() => {})
+
+  onMount(() => {
+    stargazers = (async () => {
+      try {
+        const res = await fetch('https://api.github.com/repos/ThaUnknown/miru/stargazers?per_page=100&page=' + (Math.round(Math.random() * 10) + 1))
+        const json: Array<{ html_url: string, avatar_url: string, login: string }> = await res.json()
+        return json.map(({ html_url: htmlUrl, avatar_url: avatarUrl, login }) => ({ htmlUrl, avatarUrl, login }))
+      } catch (e) {
+        return []
+      }
+    })()
+  })
 
   function * chunks <T> (arr: T[], n: number) {
     for (let i = 0; i < arr.length; i += n) {

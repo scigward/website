@@ -16,8 +16,6 @@
   import { Stargazers } from '$lib/components/ui/stargazers'
   import { Testimonials } from '$lib/components/ui/testimonials'
   import { Video } from '$lib/components/ui/video'
-
-  export let data
 </script>
 
 <Hero />
@@ -135,7 +133,7 @@
   </div>
 </div>
 
-<Stargazers stargazers={data.stargazers} />
+<Stargazers />
 <div class='w-full max-w-screen-xl mx-auto border-t border-gradient'>
 
   <div class='my-5 py-16'>

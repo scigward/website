@@ -1,5 +1,3 @@
-import process from 'node:process'
-
 import adapter from '@sveltejs/adapter-static'
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte'
 
@@ -14,8 +12,11 @@ const config = {
   preprocess: vitePreprocess({}),
   kit: {
     adapter: adapter({ fallback: 'index.html' }),
-    version: {
-      name: process.env.npm_package_version
+    prerender: {
+      concurrency: 1,
+      crawl: true,
+      entries: ['*'],
+      origin: 'https://hayase.watch'
     },
     alias: {
       'lucide-svelte/dist/Icon.svelte': './node_modules/lucide-svelte/dist/Icon.svelte'

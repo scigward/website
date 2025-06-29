@@ -1,8 +1,20 @@
 <script lang='ts'>
+  import { onMount } from 'svelte'
+
   import { Separator } from '$lib/components/ui/separator'
 
-  export let data
-  $: changelog = data.changelog
+  let changelog = new Promise(() => {})
+  onMount(() => {
+    changelog = (async () => {
+      try {
+        const res = await fetch('https://api.github.com/repos/ThaUnknown/miru/commits')
+        const json = await res.json() as Array<{ sha: string, commit: { message: string, author: { date: string } } }>
+        return json.map(({ sha, commit }) => ({ sha, date: commit.author.date, body: commit.message }))
+      } catch (e) {
+        return []
+      }
+    })()
+  })
 </script>
 
 <div class='w-full max-w-screen-xl mx-auto text-sm pb-5 text-white leading-normal px-12'>

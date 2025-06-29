@@ -8,19 +8,31 @@ export const intputType: Writable<InputType> = writable('touch')
 function pointerEvent ({ pointerType }: PointerEvent) {
   intputType.value = pointerType === 'mouse' ? 'mouse' : 'touch'
 }
-addEventListener('pointerdown', pointerEvent)
-addEventListener('pointermove', pointerEvent)
+if (typeof window !== 'undefined') {
+  addEventListener('pointerdown', pointerEvent)
+  addEventListener('pointermove', pointerEvent)
+  // media selectors for pointer coarse, fine and none
 
-// media selectors for pointer coarse, fine and none
+  const pointerTypes = [{ pointer: '(pointer: coarse)', value: 'touch' }, { pointer: '(pointer: fine)', value: 'mouse' }, { pointer: '(pointer: none)', value: 'dpad' }]
 
-const pointerTypes = [{ pointer: '(pointer: coarse)', value: 'touch' }, { pointer: '(pointer: fine)', value: 'mouse' }, { pointer: '(pointer: none)', value: 'dpad' }]
+  // for stuff like surface tablets, which can dynamically switch between touch and mouse
+  for (const { pointer, value } of pointerTypes) {
+    const media = matchMedia(pointer)
+    if (media.matches) intputType.value = value as InputType
+    media.addEventListener('change', e => {
+      if (e.matches) intputType.value = value as InputType
+    })
+  }
 
-// for stuff like surface tablets, which can dynamically switch between touch and mouse
-for (const { pointer, value } of pointerTypes) {
-  const media = matchMedia(pointer)
-  if (media.matches) intputType.value = value as InputType
-  media.addEventListener('change', e => {
-    if (e.matches) intputType.value = value as InputType
+  // hacky, but make sure keybinds system loads first so it can prevent this from running
+
+  document.addEventListener('keydown', e => {
+    if (e.key in DirectionKeyMap) {
+      e.preventDefault()
+      e.stopPropagation()
+      intputType.value = 'dpad'
+      navigateDPad(DirectionKeyMap[e.key as 'ArrowDown' | 'ArrowUp' | 'ArrowLeft' | 'ArrowRight'])
+    }
   })
 }
 
@@ -270,17 +282,6 @@ function focusElement (element?: HTMLElement | null) {
 
   return true
 }
-
-// hacky, but make sure keybinds system loads first so it can prevent this from running
-
-document.addEventListener('keydown', e => {
-  if (e.key in DirectionKeyMap) {
-    e.preventDefault()
-    e.stopPropagation()
-    intputType.value = 'dpad'
-    navigateDPad(DirectionKeyMap[e.key as 'ArrowDown' | 'ArrowUp' | 'ArrowLeft' | 'ArrowRight'])
-  }
-})
 
 export function dragScroll (node: HTMLElement) {
   let x = 0

@@ -213,16 +213,3 @@ export const videoRx = new RegExp(`.(${videoExtensions.join('|')})$`, 'i')
 
 export const fontExtensions = ['ttf', 'ttc', 'woff', 'woff2', 'otf', 'cff', 'otc', 'pfa', 'pfb', 'pcf', 'fnt', 'bdf', 'pfr', 'eot']
 export const fontRx = new RegExp(`.(${fontExtensions.join('|')})$`, 'i')
-
-export const safefetch = async <T> (_fetch: typeof fetch, ...args: Parameters<typeof fetch>): Promise<T | null> => {
-  try {
-    const res = await _fetch(...args)
-    return await res.json()
-  } catch (e) {
-    return null
-  }
-}
-
-export function arrayEqual <T> (a: T[], b: T[]) {
-  return a.length === b.length && a.every((v, i) => v === b[i])
-}
