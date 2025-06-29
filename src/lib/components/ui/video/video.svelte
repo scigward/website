@@ -29,7 +29,7 @@
     </div>
   </Dialog.Trigger>
   <Dialog.Content class='p-0'>
-    <video src='https://raw.githubusercontent.com/hayase/website/main/docs/showcase.mp4' controls class='w-full' />
+    <video src='https://raw.githubusercontent.com/hayase-app/website/main/docs/showcase.mp4' controls class='w-full' />
   </Dialog.Content>
 </Dialog.Root>
 
