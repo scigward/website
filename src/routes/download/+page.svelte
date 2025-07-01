@@ -141,7 +141,7 @@
             <div class='pb-2 text-lg font-bold'>
               Current version:
               {#await data.releases then releases}
-                {releases[0]?.version}
+                {(releases.find(({ prerelease }) => !prerelease) ?? releases[0]).version}
               {/await}
             </div>
             <a href='/changelog' class='underline pb-5 text-base font-bold text-blue-500 hover:text-blue-400'>
