@@ -53,7 +53,7 @@
   async function downloadForOS () {
     const releases = await data.releases
 
-    const { assets } = releases[0]!
+    const { assets } = releases.find(({ prerelease }) => !prerelease) ?? releases[0]
 
     const url = (ext: string) => assets.find(({ name }) => name.endsWith(ext))?.browser_download_url ?? ''
 
