@@ -9,25 +9,30 @@
     <p>You can find all information regarding extensions on the <a class='text-blue-600 dark:text-blue-500 hover:underline' href='../extensions/' target='_blank'>extensions</a> page.</p>
     <div class='border-b border-gradient my-8 w-full' />
     <h3 class='text-white font-bold text-2xl my-3'>Can I close the miniplayer?</h3>
-    <p>No. See above. The miniplayer provides feedback that something is happening in the background. Closing it would make the user feel like the app is lagging [because it's maxing out your internet in the background by torrenting] when nothing is happening.</p>
+    <p>No. The miniplayer provides feedback that something is happening in the background. Closing it would make the user feel like the app is lagging [because it's maxing out your internet in the background by torrenting] when nothing is happening.</p>
     <div class='border-b border-gradient my-8 w-full' />
     <h3 class='text-white font-bold text-2xl my-3'>Can I reduce the upload speed?</h3>
-    <p>No. See above. This app is also meant to seed the torrents the user downloads, if you want freeleech go to some private tracker.</p>
+    <p>No.This app is also meant to seed the torrents the user downloads, if you want freeleech go to some private tracker. Disabling seeding would undermine the torrent swarm the app relies on, which would make the app effectively destroy itself.</p>
     <div class='border-b border-gradient my-8 w-full' />
     <h3 class='text-white font-bold text-2xl my-3'>Does Hayase stream the video or does it store it?</h3>
     <p>Hayase only stores 1 torrent on your drive, unless <kbd>Persist Files</kbd> is enabled in settings. It doesn't stream the content as it also needs to seed the data it downloads to keep the swarm alive. It's important to note that it stores 1 torrent, not 1 video. A single torrent can sometimes consist of many video files, and as such take up a lot of space.</p>
     <div class='border-b border-gradient my-8 w-full' />
     <h3 class='text-white font-bold text-2xl my-3'>I have an existing media library, can Hayase import it?</h3>
-    <p>No. Hayase does not scan libraries like Plex or Jellyfin. You can however specify Hayase's <kbd>Torrent Download Location</kbd> in settings, and if you pick torrents which are already in the selected folder, Hayase will use them without re-download them. Make sure that <kbd>Persis Files</kbd> is enabled, or Hayase will delete content that was already watched.</p>
+    <p>
+      Yes, however it's not simpl. Hayase does not scan libraries like Plex or Jellyfin.  If you want to use Hayase with an existing library, you need to make sure that the <kbd>Torrent Download Location</kbd> is set to the same folder where your existing media is stored, and that <kbd>Persist Files</kbd> is enabled or Hayase will delete the downloaded files once you finish watching. This way, when you search for torrents for a given anime episode and play one you have downloaded Hayase will recognize the files and not re-download them.
+      <br /><br />
+      If you however want Hayase to discover downloaded torrents in the UI before you select them via episode search, then you'll need to manually copy the .torrent files to the <kbd>Torrent Download Location</kbd>'s <kbd>hayase-cache</kbd> folder and rename them to just the infoHash of the torrent file, which is a 40 character long hexadecimal string, without the .torrent extension.
+      <br /><br />
+      THayase will then be able to recognize the torrents you have downloaded and display them in the UI, however the specific episode, anime and download status metadata will not be available, until you play the torrent in the episode search, which will now recognise that you have a downloaded torrent in the cache, and visualise it with a downloaded icon in the search results.
+      <br /><br />
+      Make sure the .torrent files you copy to the <kbd>hayase-cache</kbd> folder are COPIES, not MOVES, as Hayase will modify the .torrent files to add metadata about the episode, anime and download status, stip some other metadata, which will make them incompatible with other clients and which might lead to data loss.
+    </p>
     <div class='border-b border-gradient my-8 w-full' />
     <h3 class='text-white font-bold text-2xl my-3'>Is this safe?</h3>
     <p>It's recommended that you read the <a class='text-blue-600 dark:text-blue-500 hover:underline' href='https://thewiki.moe/getting-started/torrenting/' target='_blank'>guide about basics of torrenting</a>.</p>
     <div class='border-b border-gradient my-8 w-full' />
     <h3 class='text-white font-bold text-2xl my-3'>Will this replace streaming sites?</h3>
     <p>Not really. The underlying source of video are still torrents, which aren't always seeded, so anime that's a few years old might not play back smoothly.</p>
-    <div class='border-b border-gradient my-8 w-full' />
-    <h3 class='text-white font-bold text-2xl my-3'>Can I log in with MAL?</h3>
-    <p>No. You can however migrate MAL to AL, <a class='text-blue-600 dark:text-blue-500 hover:underline' href='https://anilist.co/forum/thread/3393' target='_blank'>see this guide</a>.</p>
     <div class='border-b border-gradient my-8 w-full' />
     <h3 class='text-white font-bold text-2xl my-3'>Why is anime X not playing?</h3>
     <p>One of four reasons:</p>
@@ -39,10 +44,10 @@
     </ul>
     <div class='border-b border-gradient my-8 w-full' />
     <h3 class='text-white font-bold text-2xl my-3'>I selected an episode to play, but Hayase plays something else!</h3>
-    <p>Finding desired episodes can sometimes be difficult, if Hayase auto-selects an episode incorrectly you can either disable auto-play torrents in settings to select torrents yourself during episode choosing, or manually find and paste in a .torrent file URL or a magnet URL into Hayase to play a desired episode manually.</p>
+    <p>Finding desired episodes can sometimes be difficult, if Hayase auto-selects an episode incorrectly you can either disable auto-play torrents in settings to select torrents yourself during episode choosing, or manually find and paste in a .torrent file URL or a magnet URL into the episode search to play a desired episode manually.</p>
     <div class='border-b border-gradient my-8 w-full' />
     <h3 class='text-white font-bold text-2xl my-3'>Can I play my own torrents?</h3>
-    <p>Yes. For the home menu you can specify a different RSS feed to check when the app looks for new releases. Additionally you can just paste/drag-drop a torrent file/magnet link anywhere when using the app, and it will try it's best to auto-detect what anime is playing.</p>
+    <p>Yes. You can just paste/drag-drop a torrent file/magnet link in the episode search UI, and Hayase will then play that torrent as if it was that episode.</p>
     <div class='border-b border-gradient my-8 w-full' />
     <h3 class='text-white font-bold text-2xl my-3'>Can I change what tracker torrents are found from?</h3>
     <p>Yes. If you find other community made extensions, you can import them in the app settings, however there is no curated list of community made extensions.</p>

@@ -7,6 +7,7 @@
   import { Footer } from '$lib/components/ui/footer'
   import { Loader } from '$lib/components/ui/loader'
   import { Navbar } from '$lib/components/ui/navbar'
+  import { Toaster } from '$lib/components/ui/sonner'
 </script>
 
 <svelte:head>
@@ -14,6 +15,7 @@
 </svelte:head>
 
 <div class='w-full min-h-screen bg-black relative overflow-y-auto overflow-x-clip border-l-2 border-white' id='root'>
+  <Toaster position='top-right' expand={true} />
   <Loader />
   <Navbar />
   <!-- <ProgressBar zIndex={100} /> -->
