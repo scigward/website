@@ -12,7 +12,7 @@
     <p>No. The miniplayer provides feedback that something is happening in the background. Closing it would make the user feel like the app is lagging [because it's maxing out your internet in the background by torrenting] when nothing is happening.</p>
     <div class='border-b border-gradient my-8 w-full' />
     <h3 class='text-white font-bold text-2xl my-3'>Can I reduce the upload speed?</h3>
-    <p>No.This app is also meant to seed the torrents the user downloads, if you want freeleech go to some private tracker. Disabling seeding would undermine the torrent swarm the app relies on, which would make the app effectively destroy itself.</p>
+    <p>No. This app is also meant to seed the torrents the user downloads, if you want freeleech go to some private tracker. Disabling seeding would undermine the torrent swarm the app relies on, which would make the app effectively destroy itself.</p>
     <div class='border-b border-gradient my-8 w-full' />
     <h3 class='text-white font-bold text-2xl my-3'>Does Hayase stream the video or does it store it?</h3>
     <p>Hayase only stores 1 torrent on your drive, unless <kbd>Persist Files</kbd> is enabled in settings. It doesn't stream the content as it also needs to seed the data it downloads to keep the swarm alive. It's important to note that it stores 1 torrent, not 1 video. A single torrent can sometimes consist of many video files, and as such take up a lot of space.</p>
