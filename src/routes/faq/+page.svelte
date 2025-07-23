@@ -19,13 +19,13 @@
     <div class='border-b border-gradient my-8 w-full' />
     <h3 class='text-white font-bold text-2xl my-3'>I have an existing media library, can Hayase import it?</h3>
     <p>
-      Yes, however it's not simpl. Hayase does not scan libraries like Plex or Jellyfin.  If you want to use Hayase with an existing library, you need to make sure that the <kbd>Torrent Download Location</kbd> is set to the same folder where your existing media is stored, and that <kbd>Persist Files</kbd> is enabled or Hayase will delete the downloaded files once you finish watching. This way, when you search for torrents for a given anime episode and play one you have downloaded Hayase will recognize the files and not re-download them.
+      Yes, however it's not simple. Hayase does not scan libraries like Plex or Jellyfin.  If you want to use Hayase with an existing library, you need to make sure that the <kbd>Torrent Download Location</kbd> is set to the same folder where your existing media is stored, and that <kbd>Persist Files</kbd> is enabled or Hayase will delete the downloaded files once you finish watching. This way, when you search for torrents for a given anime episode and play one you have downloaded Hayase will recognize the files and not re-download them.
       <br /><br />
       If you however want Hayase to discover downloaded torrents in the UI before you select them via episode search, then you'll need to manually copy the .torrent files to the <kbd>Torrent Download Location</kbd>'s <kbd>hayase-cache</kbd> folder and rename them to just the infoHash of the torrent file, which is a 40 character long hexadecimal string, without the .torrent extension.
       <br /><br />
-      THayase will then be able to recognize the torrents you have downloaded and display them in the UI, however the specific episode, anime and download status metadata will not be available, until you play the torrent in the episode search, which will now recognise that you have a downloaded torrent in the cache, and visualise it with a downloaded icon in the search results.
+      Hayase will then be able to recognize the torrents you have downloaded and display them in the UI, however the specific episode, anime and download status metadata will not be available, until you play the torrent in the episode search, which will now recognise that you have a downloaded torrent in the cache, and visualise it with a downloaded icon in the search results.
       <br /><br />
-      Make sure the .torrent files you copy to the <kbd>hayase-cache</kbd> folder are COPIES, not MOVES, as Hayase will modify the .torrent files to add metadata about the episode, anime and download status, stip some other metadata, which will make them incompatible with other clients and which might lead to data loss.
+      Make sure the .torrent files you copy to the <kbd>hayase-cache</kbd> folder are COPIES, not MOVES, as Hayase will modify the .torrent files to add metadata about the episode, anime and download status, strip some other metadata, which will make them incompatible with other clients and which might lead to data loss.
     </p>
     <div class='border-b border-gradient my-8 w-full' />
     <h3 class='text-white font-bold text-2xl my-3'>Is this safe?</h3>
