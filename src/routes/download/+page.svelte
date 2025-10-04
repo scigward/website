@@ -59,7 +59,7 @@
 
     downloads = {
       iOS: 'https://www.android.com',
-      Android: 'https://play.google.com/store/apps/details?id=watch.miru',
+      Android: url('.apk'),
       Windows: url('installer.exe'),
       'Mac OS': url('.dmg'),
       Linux: url('.AppImage'),

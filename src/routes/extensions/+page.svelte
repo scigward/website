@@ -1,15 +1,3 @@
-<script lang='ts'>
-  import { toast } from 'svelte-sonner'
-
-  function clipboard () {
-    navigator.clipboard.writeText('gh:hayase-app/extensions')
-    toast.success('Copied to clipboard', {
-      description: 'You can paste this in the extensions settings to add the recommended extensions.',
-      duration: 2000
-    })
-  }
-</script>
-
 <div class='w-full max-w-screen-xl mx-auto text-sm pb-5 text-muted-foreground leading-normal px-12'>
   <div class='pt-20'>
     <div class='h-[40vh] px-5 sm:px-0 flex content-center justify-center flex-col'>
@@ -18,7 +6,7 @@
     </div>
     <div class='border-b border-gradient my-8 w-full' />
     <h3 class='text-white font-bold text-2xl my-3'>What are some recommended extensions and sources?</h3>
-    <p>Hayase is bring-your-own-content and does not offer anything, however <kbd class='text-white underline cursor-pointer select-all' on:click={clipboard}>gh:hayase-app/extensions</kbd> is recommended.</p>
+    <p>Hayase is bring-your-own-content and does not offer anything by default, it's up to the user to find or create and add their own sources.</p>
     <div class='border-b border-gradient my-8 w-full' />
     <h3 class='text-white font-bold text-2xl my-3'>Is there a curated list of extensions and sources?</h3>
     <p>No. Hayase is not directly associated with any extensions or sources. It's merely a client for streaming one's own media.</p>
