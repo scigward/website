@@ -14,9 +14,6 @@
   <a href="https://hayase.watch/download/">Download</a>
 </p>
 <p align="center">
-  <a href="https://discord.gg/Z87Nh7c4Ac">
-    <img src="https://img.shields.io/discord/953341991134064651?style=flat-square" alt="chat">
-  </a>
   <a href="https://hayase.watch/download/">
     <img alt="Download" src="https://img.shields.io/github/downloads/hayase-app/ui/total?style=flat-square">
   </a>

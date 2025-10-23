@@ -64,7 +64,7 @@
     <p>Yes. A BitTorrent implementation which uses WebRTC exists, but it's not yet adopted by any clients, and libtorrent [the library which qBit and others use] is still working on/just added support for WebRTC, which means there's no global swarm. This will hopefully change in the future.</p>
     <div class='border-b border-gradient my-8 w-full' />
     <h3 class='text-white font-bold text-2xl my-3'>Hayase crashed too many times.</h3>
-    <p>This is likely because Hayase updated from a very old version to a very new one. Uninstall Hayase, go to <kbd>%appdata%/Hayase</kbd> remove all files and re-install it. If this issue persists visit the Discord for help.</p>
+    <p>This is likely because Hayase updated from a very old version to a very new one. Uninstall Hayase, go to <kbd>%appdata%/Hayase</kbd> remove all files and re-install it.</p>
   </div>
 </div>
 
