@@ -8,8 +8,3 @@ pnpm run dev // to develop
 pnpm run build // to build
 pnpm run sync && pnpm run lint && pnpm run check // to test
 ```
-
-
-<h2 align="center">
-  <b>Enjoy streaming anime the way it should be! 🍿</b>
-</h2>
