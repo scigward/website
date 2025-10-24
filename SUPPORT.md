@@ -6,6 +6,9 @@ Need help getting started or using a project? Here's how.
 
 Generally, we do not use GitHub as a support forum. For any usage questions that are not specific to the project itself, please ask on [Stack Overflow](https://stackoverflow.com) instead. By doing so, you are more likely to quickly solve your problem, and you will allow anyone else with the same question to find the answer. This also allows maintainers to focus on improving the project for others.
 
+> [!NOTE]
+> Hayase is a bring your own content application. The maintainers cannot provide links to repositories, torrents, or any media sources—please only request assistance with the software itself.
+
 Please seek support in the following ways:
 
 1. :book: **Read the documentation and other guides** for the project to see if you can figure it out on your own. These should be located in a root `docs/` directory. If there is an example project, explore that to learn how it works to see if you can answer your question.

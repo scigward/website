@@ -4,12 +4,13 @@
       <h1 class='text-white font-bold text-5xl my-3'>About Extension</h1>
       <div class='text-sm text-muted-foreground'>Frequently Asked Questions about Extensions.</div>
     </div>
+    <p class='rounded-md border border-white/10 bg-neutral-950/80 px-5 py-4 text-xs uppercase tracking-[0.3em] text-muted-foreground/80'>Hayase ships without content. Adding an extension means you trust it and are responsible for any media it exposes.</p>
     <div class='border-b border-gradient my-8 w-full' />
     <h3 class='text-white font-bold text-2xl my-3'>What are some recommended extensions and sources?</h3>
-    <p>Hayase is bring-your-own-content and does not offer anything by default, it's up to the user to find or create and add their own sources.</p>
+    <p>Hayase is bring-your-own-content and does not offer anything by default, it's up to the user to find or create and add their own sources. The project does not recommend or maintain unofficial repositories.</p>
     <div class='border-b border-gradient my-8 w-full' />
     <h3 class='text-white font-bold text-2xl my-3'>Is there a curated list of extensions and sources?</h3>
-    <p>No. Hayase is not directly associated with any extensions or sources. It's merely a client for streaming one's own media.</p>
+    <p>No. Hayase is not directly associated with any extensions or sources. It's merely a client for streaming one's own media, and you should only add integrations you are legally permitted to use.</p>
     <div class='border-b border-gradient my-8 w-full' />
     <h3 class='text-white font-bold text-2xl my-3'>How to install/uninstall extensions?</h3>
     <p>Inside <kbd class='text-white'>Settings &gt; Extensions &gt; Repositories</kbd> you can add extension repositories by either inputting a full URL such as <kbd class='text-white'>https://example.website/manifest.json</kbd> or if an extension is published on npm <kbd class='text-white'>packagename</kbd> and pressing add, if its hosted on GitHub you can use this prefix: <kbd class='text-white'>gh:username/repo</kbd>. This will automatically import all sources the extension provides. You can then uninstall an extension by going into the extension options and pressing the <kbd class='text-white'>Delete Extension</kbd> button.</p>

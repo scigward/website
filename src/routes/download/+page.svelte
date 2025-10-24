@@ -93,6 +93,10 @@
         <h1 class='font-bold text-white text-5xl mt-5 pt-5 text-center'>Almost there!</h1>
         <div class='text-lg text-gray-400 text-center mt-4'>
           Now run the installer that just downloaded.<br /><br />
+          <span class='text-xs'>
+            Hayase is a bring-your-own-content app, it will never point you to unofficial repositories. After installing, add only the sources you have permission to use.
+          </span>
+          <br /><br />
           Your download should begin automatically. Didn’t work?
         </div>
         <a class='text-blue-500 hover:text-blue-400 text-lg underline mt-5 mb-5' href={downloads[userOS] || ''}>
@@ -154,9 +158,6 @@
             <a href='/changelog' class='underline pb-5 text-base font-bold text-blue-500 hover:text-blue-400'>
               View changelog
             </a>
-            <div class='pb-2 text-lg font-bold'>
-              Older versions of Hayase
-            </div>
           </div>
         </div>
       </div>

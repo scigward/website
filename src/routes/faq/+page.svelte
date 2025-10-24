@@ -5,8 +5,11 @@
       <div class='text-sm text-muted-foreground'>Most commonly asked questions about Hayase and its usage.</div>
     </div>
     <div class='border-b border-gradient my-8 w-full' />
+    <h3 class='text-white font-bold text-2xl my-3'>Does Hayase provide anime or torrent sources?</h3>
+    <p>No. Hayase is strictly a bring-your-own-content client. It never hosts, distributes, or links to unofficial repositories. You are responsible for sourcing media you have the rights to access and for complying with local laws.</p>
+    <div class='border-b border-gradient my-8 w-full' />
     <h3 class='text-white font-bold text-2xl my-3'>What extensions are there? How to make extensions?</h3>
-    <p>You can find all information regarding extensions on the <a class='text-blue-600 dark:text-blue-500 hover:underline' href='../extensions/' target='_blank'>extensions</a> page.</p>
+    <p>You can find all information regarding extensions on the <a class='text-blue-600 dark:text-blue-500 hover:underline' href='../extensions/' target='_blank'>extensions</a> page. Extensions are user-supplied; there is no official directory and the Hayase project does not endorse third-party repositories.</p>
     <div class='border-b border-gradient my-8 w-full' />
     <h3 class='text-white font-bold text-2xl my-3'>Can I close the miniplayer?</h3>
     <p>No. The miniplayer provides feedback that something is happening in the background. Closing it would make the user feel like the app is lagging [because it's maxing out your internet in the background by torrenting] when nothing is happening.</p>
@@ -50,7 +53,7 @@
     <p>Yes. You can just paste/drag-drop a torrent file/magnet link in the episode search UI, and Hayase will then play that torrent as if it was that episode.</p>
     <div class='border-b border-gradient my-8 w-full' />
     <h3 class='text-white font-bold text-2xl my-3'>Can I change what tracker torrents are found from?</h3>
-    <p>Yes. If you find other community made extensions, you can import them in the app settings, however there is no curated list of community made extensions.</p>
+    <p>Yes. If you find other community made extensions, you can import them in the app settings. Always verify that you are permitted to use a tracker or repository—Hayase does not vet or endorse community sources.</p>
     <div class='border-b border-gradient my-8 w-full' />
     <h3 class='text-white font-bold text-2xl my-3'>How is this different from sequential qBit?</h3>
     <p>Unlike qBit's sequential, this will prioritise downloading torrent pieces directly needed for playback, which with the user seeking isn't always just sequential.</p>

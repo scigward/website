@@ -41,7 +41,7 @@
       </div>
     </div>
     <div class='italic col-span-12 pt-5'>
-      This site or it's servers do not store, hosts or distribute any copyrighted files or media.
+      This site and its servers do not host or distribute any media. Hayase is a bring-your-own-content client.
     </div>
   </div>
 </div>

@@ -30,8 +30,12 @@
 
 <div class='w-full max-w-screen-xl mx-auto border-b border-gradient'>
   <div class='my-5 pb-14' id='about'>
-    <h1 class='font-bold text-center text-5xl m-6 leading-tight'>Torrenting made simple.</h1>
-    <p class='text-muted-foreground font-size-18 text-center pb-5 m-6'>Feature-rich yet wonderfully simple. Hayase delivers what you want effortlessly.<br />No complex configurations or high entry barriers — Hayase is perfectly functional out of the box.</p>
+    <h1 class='font-bold text-center text-5xl m-6 leading-tight'>Bring your own torrent streaming made simple.</h1>
+    <p class='text-muted-foreground font-size-18 text-center pb-5 m-6'>Hayase helps you organise, stream, and keep up with the anime you already have access to.<br />No bundled content, no unofficial libraries—just a polished tool for the media you supply.</p>
+    <div class='max-w-3xl mx-auto px-6'>
+      <p class='text-xs uppercase tracking-[0.25em] text-center text-muted-foreground/80'>Bring your own content only</p>
+      <p class='text-muted-foreground text-sm text-center mt-2'>Hayase never hosts, indexes, or distributes anime. You choose the sources you are legally allowed to use, and Hayase simply plays them.</p>
+    </div>
     <div class='grid grid-cols-12 pt-5'>
       <div class='md:col-span-4 col-span-12'>
         <div class='m-6'>
@@ -39,7 +43,7 @@
             <Rocket size='2rem' />
             <h4 class='font-bold text-xl ml-5'>Quality meets speed</h4>
           </div>
-          <p class='text-muted-foreground text-sm'>Stream torrents directly for playback, with no time wasted on looking for torrents or waiting for downloads to finish.</p>
+          <p class='text-muted-foreground text-sm'>Stream your own torrents directly for playback, with no time wasted on manual downloads or waiting for downloads to finish.</p>
         </div>
       </div>
       <div class='md:col-span-4 col-span-12'>
@@ -101,7 +105,7 @@
           <h1 class='w-full font-bold text-white mb-4 mt-2 text-5xl leading-snug'>
             It already does that.
           </h1>
-          <p class='text-muted-foreground text-sm'>Feature rich, with a perfect balance of simplicity, with no restrictions, paywalls or tracking. You want it, Hayase does it. No need for multi-layer-deep configuration, complex setup, or high entry levels, Hayase comes perfectly functional out of the box.</p>
+          <p class='text-muted-foreground text-sm'>Feature rich, with a perfect balance of simplicity, with no restrictions, paywalls or tracking. You want it, Hayase does it. No need for multi-layer-deep configuration, complex setup, or high entry levels, You’re always in control of the libraries you connect, and Hayase stays perfectly functional out of the box.</p>
         </div>
       </div>
     </div>
@@ -113,7 +117,7 @@
         <h1 class='w-full font-bold text-white mb-4 mt-2 text-5xl leading-snug text-center'>
           Available everywhere.
         </h1>
-        <p class='text-muted-foreground text-sm text-center'>No need to install different apps for different devices and platforms, effortlessly install on any<br />platform, ensuring a seamless anime experience on any device. Whether you prefer Windows, Linux, Mac, Android and more.</p>
+        <p class='text-muted-foreground text-sm text-center'>No need to install different apps for different devices and platforms, effortlessly install on any<br />platform, ensuring a seamless anime experience on any device. . Hayase runs anywhere so you can safely stream the media you own across Windows, Linux, Mac, Android and more.</p>
       </div>
       <div class='platform-grid grid gap-8 p-5 text-white justify-center'>
         <WindowsSvg class='size-10' />
@@ -153,7 +157,7 @@
         <h1 class='w-full font-bold text-white mb-4 mt-2 text-5xl leading-snug text-center'>
           HAYASE
         </h1>
-        <p class='text-muted-foreground text-sm text-center mb-5'>Start your journey right here. Right now. Get started by<br />clicking download button below.</p>
+        <p class='text-muted-foreground text-sm text-center mb-5'>Start streaming your own library right here. Right now. Get started by<br />clicking download button below.</p>
         <Button href='/download' class='font-bold text-lg' size='lg'>Download</Button>
         <div class='h-[180px] w-full overflow-clip mt-5 pt-5'>
           <img src='app.webp' alt='app' class='max-w-full object-contain aspect-[2/1] px-5 w-full' />

@@ -26,16 +26,20 @@
       <FeatureCard class='lg:col-span-3' title='Painlessly simple' description={'Simple easy to navigate UI, no complex configuration,\nperfect video playback out of the box.'} image='/simple.webp' />
     </FeatureRow>
   </div>
-  <FeatureHero title='Redefining Your Torrent Experience.' desc='Our platform provides customization options, real-time streaming, and meticulous torrent management. Select your downloads folder, track progress on the seek bar, and immerse yourself in a symphony of features that make torrenting a seamless and personalized journey.' />
+  <FeatureHero title='Redefining Your Torrent Experience.' desc='Hayase provides customization, real-time streaming, and meticulous torrent management for the content you supply. Select your downloads folder, track progress, and immerse yourself in a symphony of features that make torrenting a seamless and personalized journey.' />
   <div class='flex flex-col gap-4 pb-10'>
     <FeatureRow class='lg:grid-cols-4'>
-      <FeatureCard class='lg:col-span-3' title='Fully automated' description={'Finds and selects the best releases, for any source without\nany extra configuration required.'} image='/modal.webp' imageMode='cover' />
-      <FeatureCard title='Hands free' description='Streams torrents with, no setup and no manual intervention, without waiting for downloads to finish.' image='/episodes.webp' />
+      <FeatureCard class='lg:col-span-3' title='Fully automated' description={'Once you connect trusted extensions, Hayase finds and selects the best releases without\nany extra configuration required.'} image='/modal.webp' imageMode='cover' />
+      <FeatureCard title='Hands free' description='Streams torrents from your chosen sources with no setup, and without waiting for downloads to finish.' image='/episodes.webp' />
     </FeatureRow>
     <FeatureRow class='lg:grid-cols-4'>
       <FeatureCard title='Download locally' description='Save data locally to watch later, or load existing data and downloads from other apps.' image='/downloads.webp' imageMode='cover' />
-      <FeatureCard class='lg:col-span-3' title='From any source' description={'Add extensions for any source or tracker, with support\nfor community tracker and sources.'} image='/extensions.webp' />
+      <FeatureCard class='lg:col-span-3' title='From any source' description={'Add extensions for the trackers you are permitted to use, with support\nfor community integrations that you bring yourself.'} image='/extensions.webp' />
     </FeatureRow>
+  </div>
+
+  <div class='text-muted-foreground'>
+    Hayase is purely a torrent client and media player. It does not provide, index, host, or link to any content sources, torrent files, or unofficial repositories. Users are fully responsible for sourcing their own content legally and in compliance with their local laws.
   </div>
 
   <!-- this is just the readme -->
@@ -107,18 +111,21 @@
   <div class='mb-8'>
     <h3 class='text-2xl font-semibold mb-4'>🧲 Torrents</h3>
     <ul class='list-disc pl-5 space-y-2 text-muted-foreground'>
-      <li>Stream torrents instantly, no waiting for full downloads.</li>
+      <li>Stream your own torrents instantly, no waiting for full downloads.</li>
       <li>Download only what you need for playback.</li>
       <li>Choose your downloads folder and set speed/connection limits.</li>
-      <li>Support for custom extensions, sources, and trackers.</li>
+      <li>Support for custom extensions and trackers (you provide the sources).</li>
       <li>Specify download/upload speeds, ports and connections.</li>
       <li>Support for most popular BEP's.</li>
       <li>Persist torrents, cache progress, and rescan instantly.</li>
       <li>View detailed torrent and peer info.</li>
+      <li>Batch downloads.</li>
     </ul>
   </div>
 
-  <div>
+  <code>Note: Hayase does not provide any torrent sources, indexes, or repositories. All content must be supplied by the user.</code>
+
+  <div class='mt-8'>
     <h3 class='text-2xl font-semibold mb-4'>⚙️ Performance & Security</h3>
     <ul class='list-disc pl-5 space-y-2 text-muted-foreground'>
       <li>Highly secure.

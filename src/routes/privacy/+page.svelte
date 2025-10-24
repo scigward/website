@@ -1,9 +1,11 @@
 <div class='w-full max-w-screen-xl mx-auto text-sm pb-5 text-muted-foreground leading-normal px-12'>
   <div class='pt-20'>
     <h1 class='text-white font-bold text-4xl my-3'>Privacy Policy</h1>
-    <br />Last updated: November 27th, 2023.
+    <br />Last updated: October 24th, 2025.
     <br />
     <br />This document outlines the data practices associated with the use of the Hayase application, referred to as "the application."
+
+    <h3 class='text-white font-bold text-2xl my-3'>No Bundled Content or Sources</h3>The application does not host, distribute, or link to unofficial repositories. Users must connect only the trackers and media sources they have the rights to use. Hayase never transmits or synchronises external libraries on your behalf.
 
     <h3 class='text-white font-bold text-2xl my-3'>Local Storage of Basic Metadata</h3>The application stores basic metadata locally, and data essential for the BitTorrent protocol to function. This includes:
 

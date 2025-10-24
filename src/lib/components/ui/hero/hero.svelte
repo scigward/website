@@ -8,8 +8,11 @@
   </div>
   <div class='h-50' />
   <div class='relative text-center text-white font-bold text-5xl leading-snug'>
-    Stream torrents real-time,<br />without waiting for downloads
+    Stream your torrents real-time,<br />without waiting for downloads
   </div>
+  <p class='relative mt-4 max-w-2xl text-center text-sm font-medium text-muted-foreground'>
+    Hayase is a bring-your-own-content application. It does not ship or link to unofficial libraries, it simply lets you organise and watch the media you already have permission to access.
+  </p>
   <div class='relative pt-5 h-10 flex gap-10'>
     <Button href='/download' class='font-bold text-lg' size='lg'>Download</Button>
     <Button href='#about' variant='secondary' class='font-bold text-lg' size='lg'>
