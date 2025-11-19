@@ -1,5 +1,5 @@
 <script lang='ts'>
-  // import Discord from '../icons/Discord.svelte'
+  import Discord from '../icons/Discord.svelte'
   import Github from '../icons/Github.svelte'
   import Logo from '../icons/Logo.svelte'
 </script>
@@ -36,8 +36,8 @@
     <div class='col-span-12 sm:col-span-4 md:col-span-2 pt-5 flex md:justify-end'>
       <div>
         <div class='font-semibold mb-3 text-white'>Social</div>
-        <!-- <a href={atob('aHR0cHM6Ly9kaXNjb3JkLmdnL1o4N05oN2M0QWM=')} target='_blank'><Discord class='size-4 inline mr-2 hover:text-foreground transition-colors' /></a> -->
-        <a href='https://github.com/hayase-app/ui' target='_blank'><Github class='size-4 inline hover:text-foreground transition-colors' /></a>
+        <a href={atob('aHR0cHM6Ly9kaXNjb3JkLmdnL1RSUUVyOWV2UkE=')} target='_blank'><Discord class='size-4 inline mr-2 hover:text-foreground transition-colors' /></a>
+        <a href='https://github.com/hayase-app' target='_blank'><Github class='size-4 inline hover:text-foreground transition-colors' /></a>
       </div>
     </div>
     <div class='italic col-span-12 pt-5'>
