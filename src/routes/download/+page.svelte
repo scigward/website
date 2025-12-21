@@ -9,24 +9,14 @@
   import WindowsSVG from '$lib/components/ui/icons/WindowsSVG.svelte'
 
   const data = {
-    releases: new Promise<Array<{
-      body: string
-      version: string
-      date: string
-      prerelease: boolean
-      assets: Array<{
-        name: string
-        browser_download_url: string
-      }>
-    }>>(() => {})
+    releases: new Promise<Record<string, string>>(() => {})
   }
 
   onMount(() => {
     data.releases = (async () => {
       try {
-        const res = await fetch(atob('aHR0cHM6Ly9hcGkuZ2l0aHViLmNvbS9yZXBvcy9oYXlhc2UtYXBwL2RvY3MvcmVsZWFzZXM='))
-        const json: Array<{ body: string, tag_name: string, published_at: string, prerelease: boolean, assets: Array<{name: string, browser_download_url: string}> }> = await res.json()
-        return json.map(({ body, tag_name: version, published_at: date, assets, prerelease }) => ({ body, version, date, assets, prerelease }))
+        const res = await fetch(atob('aHR0cHM6Ly9hcGkuaGF5YXNlLndhdGNoL2xhdGVzdA=='))
+        return await res.json()
       } catch (e) {
         return []
       }
@@ -60,9 +50,7 @@
   async function downloadForOS () {
     const releases = await data.releases
 
-    const { assets } = releases.find(({ prerelease }) => !prerelease) ?? releases[0]!
-
-    const url = (ext: string) => assets.find(({ name }) => name.endsWith(ext))?.browser_download_url ?? ''
+    const url = (ext: string) => Object.entries(releases).find(([name]) => name.endsWith(ext))?.[1] ?? ''
 
     downloads = {
       iOS: 'https://www.android.com',
