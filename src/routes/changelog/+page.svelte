@@ -7,7 +7,7 @@
   onMount(() => {
     changelog = (async () => {
       try {
-        const res = await fetch('https://api.github.com/repos/ThaUnknown/miru/commits')
+        const res = await fetch('https://api.github.com/repos/hayase-app/interface/commits')
         const json = await res.json() as Array<{ sha: string, commit: { message: string, author: { date: string } } }>
         return json.map(({ sha, commit }) => ({ sha, date: commit.author.date, body: commit.message }))
       } catch (e) {

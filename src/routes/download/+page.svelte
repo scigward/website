@@ -137,12 +137,6 @@
         <div class='flex flex-col items-center lg:items-start pl-0 lg:pl-5 pt-5 border-t lg:border-t-0 border-gradient'>
           <h3 class='font-bold text-white text-3xl text-center lg:text-left py-8'>Additional resources</h3>
           <div class='flex flex-col w-full items-center lg:items-start'>
-            <div class='pb-2 text-lg font-bold'>
-              Current version:
-              {#await data.releases then releases}
-                {(releases.find(({ prerelease }) => !prerelease) ?? releases[0])?.version}
-              {/await}
-            </div>
             <a href='/changelog' class='underline pb-5 text-base font-bold text-blue-500 hover:text-blue-400'>
               View changelog
             </a>
