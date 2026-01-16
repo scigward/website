@@ -37,7 +37,29 @@ export async function onRequest ({ params, request }) {
           }
         })
       })
-      if (!res.ok) throw new Error((await res.text()) || res.statusText || res.status.toString())
+      if (!res.ok) {
+        const html = /* html */`
+<!DOCTYPE html>
+<html style=background:#000>
+  <head>
+    <meta http-equiv=refresh content="5; url=https://hayase.watch">
+    <meta property="og:title" content="Shared Anime">
+    <meta property="og:description" content='Stream anime torrents, real-time with no waiting for downloads.'>
+    <meta property="og:site_name" content="Hayase">
+    <meta property="og:image" content=https://img.anili.st/media/${id}>
+    <meta property="og:url" content=hayase://anime/${id}>
+    <meta data-vmid="twitter:card" name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content='#17191C'>
+  </head>
+  <body>
+  </body>
+</html>`
+        return new Response(html, {
+          headers: {
+            'content-type': 'text/html;charset=UTF-8'
+          }
+        })
+      }
 
       const { data } = await res.json()
 
