@@ -43,15 +43,17 @@ export async function onRequest ({ params, request }) {
 
       const title = data.Media.title.english ?? data.Media.title.userPreferred ?? 'Anime'
 
+      const strippedDescription = data.Media.description?.replace(/<[^>]+>/g, '') ?? ''
+
       const html = /* html */`
 <!DOCTYPE html>
 <html style=background:#000>
   <head>
     <meta http-equiv=refresh content="5; url=https://hayase.watch">
     <meta property="og:title" content="${title}">
-    <meta property="og:description" content="${data.Media.description ?? 'Stream anime torrents, real-time with no waiting for downloads.'}">
+    <meta property="og:description" content="${strippedDescription ?? 'Stream anime torrents, real-time with no waiting for downloads.'}">
     <meta property="og:site_name" content="Hayase">
-    <meta property="og:image" content=https://https://img.anili.st/media/${id}.png>
+    <meta property="og:image" content=https://img.anili.st/media/${id}>
     <meta property="og:url" content=hayase://anime/${id}>
     <meta data-vmid="twitter:card" name="twitter:card" content="summary_large_image">
     <meta name="theme-color" content="${data.Media.coverImage.color ?? '#17191C'}">
