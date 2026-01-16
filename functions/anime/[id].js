@@ -1,10 +1,10 @@
 // this is a bit scuffed, but these are cf pages redirect functions
 
-export async function onRequest ({ params }) {
+export async function onRequest ({ params, request }) {
   try {
     const id = Number(params.id)
     if (Number.isSafeInteger(id)) {
-      const ua = navigator.userAgent || ''
+      const ua = request.headers.get('user-agent') ?? ''
       if (!ua.includes('Discordbot')) {
         return Response.redirect('hayase://anime/' + id)
       }
