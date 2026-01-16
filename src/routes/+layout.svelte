@@ -14,7 +14,7 @@
   <meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=0' />
 </svelte:head>
 
-<div class='w-full min-h-screen bg-black relative overflow-y-auto overflow-x-clip border-l-2 border-white' id='root'>
+<div class='w-full min-h-screen bg-black relative overflow-y-auto overflow-x-clip' id='root'>
   <Toaster position='top-right' expand={true} />
   <Loader />
   <Navbar />
