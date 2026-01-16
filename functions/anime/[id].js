@@ -37,7 +37,7 @@ export async function onRequest ({ params, request }) {
           }
         })
       })
-      if (!res.ok) throw res
+      if (!res.ok) throw new Error((await res.text()) || res.statusText || res.status.toString())
 
       const { data } = await res.json()
 
