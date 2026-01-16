@@ -66,6 +66,10 @@ export async function onRequest ({ params, request }) {
         }
       })
     }
-  } catch (e) {}
+  } catch (e) {
+    const msg = e instanceof Error ? e.message : String(e)
+    console.error('Redirect error:', msg)
+    return new Response('Redirect error: ' + msg, { status: 500 })
+  }
   return Response.redirect('https://hayase.watch/')
 }
