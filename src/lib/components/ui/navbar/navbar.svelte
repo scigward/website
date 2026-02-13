@@ -10,7 +10,10 @@
       <Logo class='h-10 object-contain p-1 text-white' />
       <span class='sr-only'>Hayase</span>
     </a>
-    <a href='/features' class='text-muted-foreground hover:text-foreground transition-colors ml-auto'>
+    <a href='https://wiki.hayase.watch/' target='_blank' class='text-muted-foreground hover:text-foreground transition-colors ml-auto'>
+      Wiki
+    </a>
+    <a href='/features' class='text-muted-foreground hover:text-foreground transition-colors'>
       Features
     </a>
     <a href='/download' class='text-muted-foreground hover:text-foreground transition-colors'>
