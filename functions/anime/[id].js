@@ -1,4 +1,142 @@
+// import cookie from 'cookie'
+
 // this is a bit scuffed, but these are cf pages redirect functions
+function endIndex (str, min, len) {
+  const index = str.indexOf(';', min)
+  return index === -1 ? len : index
+}
+/**
+ * Find the `=` character between `min` and `max` in str.
+ */
+function eqIndex (str, min, max) {
+  const index = str.indexOf('=', min)
+  return index < max ? index : -1
+}
+/**
+ * Slice out a value between startPod to max.
+ */
+function valueSlice (str, min, max) {
+  let start = min
+  let end = max
+  do {
+    const code = str.charCodeAt(start)
+    if (code !== 0x20 /*   */ && code !== 0x09 /* \t */) { break }
+  } while (++start < end)
+  while (end > start) {
+    const code = str.charCodeAt(end - 1)
+    if (code !== 0x20 /*   */ && code !== 0x09 /* \t */) { break }
+    end--
+  }
+  return str.slice(start, end)
+}
+
+function decode (str) {
+  if (str.indexOf('%') === -1) { return str }
+  try {
+    return decodeURIComponent(str)
+  } catch (e) {
+    return str
+  }
+}
+
+/**
+ * RegExp to match max-age-value in RFC 6265 sec 5.6.2
+ */
+const maxAgeRegExp = /^-?\d+$/
+
+function parseSetCookie (str, options) {
+  const dec = options?.decode || decode
+  const len = str.length
+  const endIdx = endIndex(str, 0, len)
+  const eqIdx = eqIndex(str, 0, endIdx)
+  const setCookie = eqIdx === -1
+    ? { name: '', value: dec(valueSlice(str, 0, endIdx)) }
+    : {
+        name: valueSlice(str, 0, eqIdx),
+        value: dec(valueSlice(str, eqIdx + 1, endIdx))
+      }
+  let index = endIdx + 1
+  while (index < len) {
+    const endIdx = endIndex(str, index, len)
+    const eqIdx = eqIndex(str, index, endIdx)
+    const attr = eqIdx === -1
+      ? valueSlice(str, index, endIdx)
+      : valueSlice(str, index, eqIdx)
+    const val = eqIdx === -1 ? undefined : valueSlice(str, eqIdx + 1, endIdx)
+    switch (attr.toLowerCase()) {
+      case 'httponly':
+        setCookie.httpOnly = true
+        break
+      case 'secure':
+        setCookie.secure = true
+        break
+      case 'partitioned':
+        setCookie.partitioned = true
+        break
+      case 'domain':
+        setCookie.domain = val
+        break
+      case 'path':
+        setCookie.path = val
+        break
+      case 'max-age':
+        if (val && maxAgeRegExp.test(val)) { setCookie.maxAge = Number(val) }
+        break
+      case 'expires':
+        if (!val) { break }
+        const date = new Date(val)
+        if (Number.isFinite(date.valueOf())) { setCookie.expires = date }
+        break
+      case 'priority':
+        if (!val) { break }
+        const priority = val.toLowerCase()
+        if (priority === 'low' ||
+                    priority === 'medium' ||
+                    priority === 'high') {
+          setCookie.priority = priority
+        }
+        break
+      case 'samesite':
+        if (!val) { break }
+        const sameSite = val.toLowerCase()
+        if (sameSite === 'lax' ||
+                    sameSite === 'strict' ||
+                    sameSite === 'none') {
+          setCookie.sameSite = sameSite
+        }
+        break
+    }
+    index = endIdx + 1
+  }
+  return setCookie
+}
+
+/**
+ * @type {any} sess
+ */
+let sess
+/**
+ * @type {string | undefined}
+ */
+let token
+
+async function getCookie () {
+  if (sess && token && sess.expires >= new Date()) return { sess, token }
+
+  const res = await fetch('https://anilist.co/')
+
+  const cookieObj = parseSetCookie(res.headers.get('set-cookie') ?? '')
+
+  const body = await res.text()
+
+  token = /window\.al_token = "([^"]+)"/.exec(body)?.[1]
+
+  if (!token || cookieObj.name !== 'laravel_session') throw new Error('Failed to retrieve token or session cookie')
+
+  sess = cookieObj
+
+  return { sess, token }
+}
 
 export async function onRequest ({ params, request }) {
   try {
@@ -9,11 +147,16 @@ export async function onRequest ({ params, request }) {
         return Response.redirect('hayase://anime/' + id)
       }
 
-      const res = await fetch('https://graphql.anilist.co', {
+      const { sess, token } = await getCookie()
+
+      const res = await fetch('https://anilist.co/graphql', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          Accept: 'application/json'
+          Accept: 'application/json',
+          Cookie: `${sess.name}=${sess.value}`,
+          'x-csrf-token': token,
+          Referer: 'https://anilist.co/2e91b0aedee5a99abdc6.worker.js'
         },
         body: JSON.stringify({
           query: /* js */`
@@ -35,7 +178,7 @@ export async function onRequest ({ params, request }) {
           variables: {
             id
           }
-        })
+        }).replace('\n', ',')
       })
       if (!res.ok) {
         const html = /* html */`
