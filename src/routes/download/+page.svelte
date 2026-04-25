@@ -31,8 +31,8 @@
     const windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE']
     const iosPlatforms = ['iPhone', 'iPad', 'iPod']
 
-    if (macosPlatforms.includes(platform)) return 'Mac OS'
     if (iosPlatforms.includes(platform)) return 'iOS'
+    if (macosPlatforms.includes(platform)) return 'Mac OS'
     if (windowsPlatforms.includes(platform)) return 'Windows'
     if (navigator.userAgent.includes('Android')) return 'Android'
     if (/Linux/.test(platform)) return 'Linux'
