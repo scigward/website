@@ -7,6 +7,7 @@
   import MacOSSVG from '$lib/components/ui/icons/MacOSSVG.svelte'
   import SteamOSSVG from '$lib/components/ui/icons/SteamOSSVG.svelte'
   import WindowsSVG from '$lib/components/ui/icons/WindowsSVG.svelte'
+  import IOSSVG from '$lib/components/ui/icons/iOSSVG.svelte'
 
   const data = {
     releases: new Promise<Record<string, string>>(() => {})
@@ -39,7 +40,7 @@
   }
 
   let downloads = {
-    iOS: '',
+    iOS: 'http://staging.hayase.app/download',
     Android: '',
     Windows: '',
     'Mac OS': '',
@@ -53,7 +54,7 @@
     const url = (ext: string) => Object.entries(releases).find(([name]) => name.endsWith(ext))?.[1] ?? ''
 
     downloads = {
-      iOS: 'https://www.android.com',
+      iOS: 'http://staging.hayase.app/download',
       Android: url('.apk'),
       Windows: url('installer.exe'),
       'Mac OS': url('.dmg'),
@@ -99,11 +100,18 @@
             <div class='text-lg font-semibold mt-2'>Windows</div>
             <div class='text-gray-400'>exe</div>
           </a>
-          <a class='text-inherit bg-neutral-950 hover:bg-neutral-900 transition rounded-lg flex flex-col px-8 w-full max-w-md mb-5 p-5' href={downloads['Mac OS'] || ''}>
-            <MacOSSVG />
-            <div class='text-lg font-semibold mt-2'>Mac OS</div>
-            <div class='text-gray-400'>Universal dmg</div>
-          </a>
+          <div class='flex w-full max-w-md gap-4'>
+            <a class='text-inherit bg-neutral-950 hover:bg-neutral-900 transition rounded-lg flex flex-col px-8 w-full max-w-md mb-5 p-5' href={downloads['Mac OS'] || ''}>
+              <MacOSSVG />
+              <div class='text-lg font-semibold mt-2'>Mac OS</div>
+              <div class='text-gray-400'>Universal dmg</div>
+            </a>
+            <a class='text-inherit bg-neutral-950 hover:bg-neutral-900 transition rounded-lg flex flex-col px-8 w-full max-w-md mb-5 p-5' href={downloads.iOS || ''}>
+              <IOSSVG />
+              <div class='text-lg font-semibold mt-2'>iOS</div>
+              <div class='text-gray-400'>Sideload Only ipa</div>
+            </a>
+          </div>
           <div class='flex w-full max-w-md gap-4'>
             <a class='text-inherit bg-neutral-950 hover:bg-neutral-900 transition rounded-lg flex flex-col px-8 flex-1 mb-5 p-5' href={downloads.Linux || ''}>
               <LinuxSVG />
