@@ -108,7 +108,7 @@
             </a>
             <a class='text-inherit bg-neutral-950 hover:bg-neutral-900 transition rounded-lg flex flex-col px-8 w-full max-w-md mb-5 p-5' href={downloads.iOS || ''}>
               <IOSSVG />
-              <div class='text-lg font-semibold mt-2'>iOS</div>
+              <div class='text-lg font-semibold mt-2'>iOS 26</div>
               <div class='text-gray-400'>Sideload Only ipa</div>
             </a>
           </div>
