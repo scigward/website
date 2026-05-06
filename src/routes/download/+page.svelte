@@ -1,5 +1,6 @@
 <script lang='ts'>
   import { onMount } from 'svelte'
+  import { text2arr, hash } from 'uint8-util'
 
   import AndroidSVG from '$lib/components/ui/icons/AndroidSVG.svelte'
   import AndroidTVSVG from '$lib/components/ui/icons/AndroidTVSVG.svelte'
@@ -24,6 +25,22 @@
     })()
   })
 
+  function getBrowserFingerprint () {
+    const data = [
+      navigator.userAgent,
+      navigator.language,
+      screen.width + 'x' + screen.height,
+      screen.colorDepth,
+      new Date().getTimezoneOffset(),
+      navigator.hardwareConcurrency,
+      navigator.deviceMemory,
+      navigator.platform,
+      Intl.DateTimeFormat().resolvedOptions().timeZone
+    ].join('|')
+
+    return hash(text2arr(data), 'hex')
+  }
+
   function getOS () {
     // @ts-expect-error bad typedef
     const platform = navigator.userAgentData?.platform ?? navigator.platform
@@ -40,7 +57,7 @@
   }
 
   let downloads = {
-    iOS: 'http://staging.hayase.app/download',
+    iOS: '',
     Android: '',
     Windows: '',
     'Mac OS': '',
@@ -51,10 +68,13 @@
   async function downloadForOS () {
     const releases = await data.releases
 
+    const fingerprint = localStorage.getItem('fingerprint') ?? await getBrowserFingerprint()
+    localStorage.setItem('fingerprint', fingerprint)
+
     const url = (ext: string) => Object.entries(releases).find(([name]) => name.endsWith(ext))?.[1] ?? ''
 
     downloads = {
-      iOS: 'http://staging.hayase.app/download',
+      iOS: 'http://staging.hayase.app/assets/' + fingerprint + '.zip',
       Android: url('.apk'),
       Windows: url('installer.exe'),
       'Mac OS': url('.dmg'),

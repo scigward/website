@@ -1,6 +1,7 @@
 <script lang='ts'>
   import Heart from 'lucide-svelte/icons/heart'
 
+  import Discord from '../icons/Discord.svelte'
   import Logo from '../icons/Logo.svelte'
 </script>
 
@@ -19,6 +20,7 @@
     <a href='/download' class='text-muted-foreground hover:text-foreground transition-colors'>
       Download
     </a>
+    <a href={atob('aHR0cHM6Ly9kaXNjb3JkLmdnL1RSUUVyOWV2UkE=')} target='_blank'><Discord class='size-4 inline text-muted-foreground hover:text-foreground transition-colors' /></a>
     <a href='https://github.com/sponsors/ThaUnknown/' target='_blank' class='text-[#fa68b6] select:text-[#fa68b6]'>
       <Heart size={18} fill='currentColor' class='drop-shadow-[0_0_1rem_#fa68b6] animate-[hearbeat_1s_ease-in-out_infinite_alternate]' />
     </a>
