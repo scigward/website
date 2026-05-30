@@ -48,6 +48,14 @@
     const windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE']
     const iosPlatforms = ['iPhone', 'iPad', 'iPod']
 
+    const isIPad =
+       platform === 'iPad' ||
+       (
+          platform === 'MacIntel' &&
+          navigator.maxTouchPoints > 1
+       )
+
+    if (isIPad) return 'iOS'   
     if (iosPlatforms.includes(platform)) return 'iOS'
     if (macosPlatforms.includes(platform)) return 'Mac OS'
     if (windowsPlatforms.includes(platform)) return 'Windows'
